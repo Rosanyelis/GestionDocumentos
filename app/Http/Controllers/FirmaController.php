@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendNotifyAsignado;
 use App\Models\AsignaDocumento;
 use App\Models\Documento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use setasign\Fpdi\Fpdi;
 
@@ -46,6 +48,18 @@ class FirmaController extends Controller
 
         if ($request->posicion == 'Seleccione') {
             return redirect('/mis-documentos/'.$id.'/firmar-documento')->with('danger', 'Por favor indique la posición de la firma.');
+        }
+
+
+        $archivo = $request->nameArchivo;
+        // Envío de correo
+        $mailable = new SendNotifyAsignado($archivo);
+        try {
+            // $user = User::where('rol_id', 1)->first();
+
+            Mail::to('rosanyelismendoza@gmail.com')->send($mailable);
+        } catch (\Throwable $th) {
+            return redirect('mis-documentos')->with('error', 'Problemas con el servicio de Correos, por favor intente nuevamente en firmar el documento');
         }
 
         // decodificamos la imagen
@@ -113,6 +127,8 @@ class FirmaController extends Controller
         $urlArchivo = $uploadPath.'firmado-'.date("Ymdhms").'-'.$request->nameArchivo;
         $urlFilename = '/storage/DocumentosFirmados/'.'firmado-'.date("Ymdhms").'-'.$request->nameArchivo;
 		$pdf->Output('F', $urlArchivo);
+
+
 
         $registro = Documento::where('id', $id)->first();
         $registro->archivo_firmado = $urlFilename;

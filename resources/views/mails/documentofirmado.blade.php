@@ -30,14 +30,7 @@
                                 <td
                                     style="padding-left: 1rem !important;padding-left: 2.75rem !important;padding-right: 1rem !important;padding-right: 2.75rem !important;padding-bottom: 1rem !important;padding-bottom: 2.75rem !important;">
                                     <p style="text-align: justify; ">Buen día estimado(a).</p>
-                                    <p>Se le informa que tiene un documento por firmar.</p>
-                                    <p>Ingrese a la plataforma SoftGD para que pueda acceder a él, desde su panel de
-                                        control, en caso de no estar registrado, le dejamos el enlace de acceso para su
-                                        registro o inicio de sesion.</p>
-                                    <a href="https://gestiondocumentos-production.up.railway.app/">Ingresar al Sistema</a>
-                                    <p><strong>Nota:</strong> Si no está registrado, recomendamos hacerlo con el correo
-                                        en el que recibió la información, para que al ingresar observe el documento
-                                        asignado.</p>
+                                    <p>Se notifica que el documento <strong>{{ $nameArchivo }}</strong> fué firmado por uno de los usuarios asignados.</p>
                                 </td>
                             </tr>
                         </tbody>
