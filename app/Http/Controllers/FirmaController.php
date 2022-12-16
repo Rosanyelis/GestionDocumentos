@@ -57,6 +57,7 @@ class FirmaController extends Controller
         // renombramos la imagen
         $uuid = Str::uuid(4);
         $fileName = $uuid . '- firma - ' . Auth::user()->name . '-' .date("Ymdhms") .'.png';
+        mkdir(public_path('/storage/Firmas'), 0777);
         $uploadPath = public_path('/storage/Firmas/');
         $urlArchivo = $uploadPath.$fileName;
         // la guardamos
@@ -103,6 +104,7 @@ class FirmaController extends Controller
 		    }
 		}
         // guardo el pdf firmado en la siguiente url
+        mkdir(public_path('storage/DocumentosFirmados'), 0777);
         $uploadPath = public_path('/storage/DocumentosFirmados/');
         $urlArchivo = $uploadPath.'firmado-'.date("Ymdhms").'-'.$request->nameArchivo;
         $urlFilename = '/storage/DocumentosFirmados/'.'firmado-'.date("Ymdhms").'-'.$request->nameArchivo;
