@@ -9,7 +9,7 @@
     <meta name="description" content="Sistema de Gestión de Documentos.">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.jpeg') }}">
     <!-- Page Title  -->
     <title>Dashboard | Gestión de Documentos</title>
     <!-- StyleSheets  -->

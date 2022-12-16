@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Sistema de Gestión de Documentos.">
     <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.jpeg') }}">
     <!-- Page Title  -->
     <title>Iniciar Sesion | Gestiòn de Documentos</title>
     <!-- StyleSheets  -->
