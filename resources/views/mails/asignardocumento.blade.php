@@ -34,7 +34,7 @@
                                     <p>Ingrese a la plataforma SoftGD para que pueda acceder a él, desde su panel de
                                         control, en caso de no estar registrado, le dejamos el enlace de acceso para su
                                         registro o inicio de sesion.</p>
-                                    <a href="https://gestiondocumentos.dev">Ingresar al Sistema</a>
+                                    <a href="{{ url() }}">Ingresar al Sistema</a>
                                     <p><strong>Nota:</strong> Si no está registrado, recomendamos hacerlo con el correo
                                         en el que recibió la información, para que al ingresar observe el documento
                                         asignado.</p>
