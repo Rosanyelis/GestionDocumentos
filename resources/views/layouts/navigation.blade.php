@@ -22,7 +22,7 @@
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item">
                         <a href="{{ url('/dashboard') }}" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-bag"></em></span>
+                            <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
                             <span class="nk-menu-text">Dashboard</span>
                         </a>
                     </li><!-- .nk-menu-item -->
@@ -31,6 +31,12 @@
                         <a href="{{ url('/documentos') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-book-read"></em></span>
                             <span class="nk-menu-text">Documentos</span>
+                        </a>
+                    </li><!-- .nk-menu-item -->
+                    <li class="nk-menu-item">
+                        <a href="{{ url('/usuarios') }}" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+                            <span class="nk-menu-text">Usuarios</span>
                         </a>
                     </li><!-- .nk-menu-item -->
                     @endif

@@ -32,7 +32,7 @@ class SendNotifyAsignado extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'SoftGD - Documento Firmado',
+            subject: 'Firma de Documentos ALPASA - Documento Firmado',
         );
     }
 

@@ -37,7 +37,7 @@ class SendDocumentoNotify extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'SoftGD - Tiene un documento que firmar',
+            subject: 'Firma de Documentos ALPASA - Tiene un documento que firmar',
         );
     }
 

@@ -31,7 +31,7 @@
                                     style="padding-left: 1rem !important;padding-left: 2.75rem !important;padding-right: 1rem !important;padding-right: 2.75rem !important;padding-bottom: 1rem !important;padding-bottom: 2.75rem !important;">
                                     <p style="text-align: justify; ">Buen día estimado(a).</p>
                                     <p>Se le informa que tiene un documento por firmar.</p>
-                                    <p>Ingrese a la plataforma SoftGD para que pueda acceder a él, desde su panel de
+                                    <p>Ingrese a la plataforma <strong>Firma de Documentos ALPASA</strong> para que pueda acceder a él, desde su panel de
                                         control, en caso de no estar registrado, le dejamos el enlace de acceso para su
                                         registro o inicio de sesion.</p>
                                     <a href="https://gestiondocumentos-production.up.railway.app/">Ingresar al Sistema</a>
@@ -46,7 +46,7 @@
                         <tbody>
                             <tr>
                                 <td style="text-align: center; padding-top: 1.5rem !important;">
-                                    <p style="font-size: 13px;">Copyright © 2022 SoftGD. Todos los Derechos
+                                    <p style="font-size: 13px;">Copyright © 2022 Firma de Documentos ALPASA. Todos los Derechos
                                         Reservados.</p>
                                 </td>
                             </tr>

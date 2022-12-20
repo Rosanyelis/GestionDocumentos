@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\DocumentosController;
 use App\Http\Controllers\FirmaController;
+use App\Http\Controllers\NotificacionesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,11 +30,15 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/notificaciones-json', [NotificacionesController::class, 'index'])->name('notificaciones.index');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('/todas-las-notificaciones', [NotificacionesController::class, 'all'])->name('notificaciones.all');
     # Modulo Documentos - Administrador
     Route::get('/documentos', [DocumentosController::class, 'index'])->name('documentos.index');
     Route::get('/documentos/nuevo-documento', [DocumentosController::class, 'create'])->name('documentos.create');
@@ -47,6 +53,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/mis-documentos', [FirmaController::class, 'index'])->name('misdocumentos.index');
     Route::get('/mis-documentos/{id}/firmar', [FirmaController::class, 'firmar'])->name('misdocumentos.firmar-documento');
     Route::post('/mis-documentos/{id}/completar-firma', [FirmaController::class, 'completarFirma'])->name('misdocumentos.completar');
+
+
+    # Modulo Usuarios
+    Route::get('/usuarios', [UsersController::class, 'index'])->name('usuarios.index');
+    Route::get('/usuarios/nuevo-usuario', [UsersController::class, 'create'])->name('usuarios.create');
+    Route::post('/usuarios/guardar-usuario', [UsersController::class, 'store'])->name('usuarios.store');
+    Route::get('/usuarios/{id}/editar-usuario', [UsersController::class, 'edit'])->name('usuarios.edit');
+    Route::put('/usuarios/{id}/actualizar-usuario', [UsersController::class, 'update'])->name('usuarios.update');
+    Route::post('/usuarios/{id}/eliminar-usuario', [UsersController::class, 'destroy'])->name('documentos.destroy');
 });
 
 require __DIR__.'/auth.php';

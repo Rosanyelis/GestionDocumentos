@@ -59,6 +59,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(AsignaDocumento::class, 'user_id', 'id');
     }
+
+    /**
+     * Obtiene las notificaciones.
+     */
+    public function notificaciones()
+    {
+        return $this->hasMany(Notificacion::class, 'user_id', 'id');
+    }
     // /**
     //  * The roles that belong to the user.
     //  */

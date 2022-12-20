@@ -39,7 +39,7 @@
                         <tbody>
                             <tr>
                                 <td style="text-align: center; padding-top: 1.5rem !important;">
-                                    <p style="font-size: 13px;">Copyright © 2022 SoftGD. Todos los Derechos
+                                    <p style="font-size: 13px;">Copyright © 2022 Firma de Documentos ALPASA. Todos los Derechos
                                         Reservados.</p>
                                 </td>
                             </tr>

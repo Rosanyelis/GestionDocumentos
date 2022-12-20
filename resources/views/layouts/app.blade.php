@@ -54,6 +54,35 @@
     <script src="{{ asset('assets/js/bundle.js?ver=2.9.0') }}"></script>
     <script src="{{ asset('assets/js/scripts.js?ver=2.9.0') }}"></script>
     @yield('scripts')
+    <script>
+        $(function() {
+            'use strict';
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+
+            $.ajax({
+                type: 'GET',
+                url: '{{ url('/notificaciones-json') }}',
+                dataType: 'json',
+                data: {},
+                success: function(response) {
+                    $.each(response.data, function(idx, el) {
+                        let time = new Date(el.created_at).toLocaleDateString();
+                        $('.nk-quick-nav .notification-dropdown .dropdown-menu .dropdown-body .nk-notification')
+                        .append('<div class="nk-notification-item dropdown-inner"><div class="nk-notification-icon"><em class="icon icon-circle bg-success-dim ni ni-curve-down-right"></em></div><div class="nk-notification-content"><div class="nk-notification-text">'+el.descripcion+'</div><div class="nk-notification-time"><strong>'+time+'</strong></div></div></div>');
+                    });
+
+                },
+                error: function(response) {
+                    // console.log(response);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\SendNotifyAsignado;
 use App\Models\AsignaDocumento;
 use App\Models\Documento;
+use App\Models\Notificacion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -136,6 +137,12 @@ class FirmaController extends Controller
 
         $registro = AsignaDocumento::where('documento_id', $id)->first();
         $registro->firmado = 'Si';
+        $registro->save();
+
+        $registro = new Notificacion;
+        $registro->user_id = Auth::user()->id;
+        $registro->descripcion = 'Documento ***'.$request->nameArchivo. '*** fué firmado por el usuario: ' .Auth::user()->name. ' exitósamente';
+        $registro->estado = 1;
         $registro->save();
 
         return redirect('mis-documentos')->with('success', 'Documento Firmado exitósamente');
