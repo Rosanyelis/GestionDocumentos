@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.jpeg') }}">
     <!-- Page Title  -->
-    <title>Iniciar Sesion | Gestiòn de Documentos</title>
+    <title>Iniciar Sesión | ALPASA | Gestión de Documentos y Firmas</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('assets/css/dashlite.css?ver=2.9.0') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('assets/css/theme.css?ver=2.9.0') }}">
@@ -108,7 +108,7 @@
                                 </div> -->
                                 <div class="col-lg-6">
                                     <div class="nk-block-content text-center text-lg-left">
-                                        <p class="text-soft">&copy; 2022 Gestión de Documentos. Todos los derechos
+                                        <p class="text-soft">&copy; 2022 ALPASA Gestión de Documentos y Firmas. Todos los derechos
                                             reservados.</p>
                                     </div>
                                 </div>

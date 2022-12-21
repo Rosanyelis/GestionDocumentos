@@ -23,7 +23,7 @@
                     <li class="nk-menu-item">
                         <a href="{{ url('/dashboard') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
-                            <span class="nk-menu-text">Dashboard</span>
+                            <span class="nk-menu-text">Inicio</span>
                         </a>
                     </li><!-- .nk-menu-item -->
                     @if (Auth::user()->rol->name == 'Administrador')

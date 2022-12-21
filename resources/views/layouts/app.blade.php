@@ -11,7 +11,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.jpeg') }}">
     <!-- Page Title  -->
-    <title>Dashboard | Gestión de Documentos</title>
+    <title>ALPASA | Gestión de Documentos y Firmas</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('assets/css/dashlite.css?ver=2.9.0') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('assets/css/theme.css?ver=2.9.0') }}">

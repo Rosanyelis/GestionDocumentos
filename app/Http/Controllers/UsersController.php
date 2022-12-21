@@ -41,14 +41,13 @@ class UsersController extends Controller
         $request->validate([
             'name' => ['required'],
             'email' => ['required', 'unique:users'],
-            'password' => ['required', 'max:8'],
+            'password' => ['required'],
         ],
         [
             'name.required' => 'El campo Nombre es obligatorio',
             'email.required' => 'El campo Correo es obligatorio',
             'email.required' => 'El correo ingresado ya existe.',
             'password.required' => 'El campo Contraseña es obligatorio',
-            'password.max' => 'El campo Contraseña debe contener máximo 8 carácteres',
         ]);
 
         $rol = Rol::where('name', 'Operador')->first();
@@ -104,12 +103,10 @@ class UsersController extends Controller
             $request->validate([
                 'name' => ['required'],
                 'email' => ['required'],
-                'password' => ['max:8'],
             ],
             [
                 'name.required' => 'El campo Nombre es obligatorio',
                 'email.required' => 'El campo Correo es obligatorio',
-                'password.max' => 'El campo Contraseña debe contener máximo 8 carácteres',
             ]);
 
             $registro = User::where('id', $id)->first();
