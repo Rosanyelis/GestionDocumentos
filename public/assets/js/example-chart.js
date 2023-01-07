@@ -1,12 +1,12 @@
 "use strict";
 
 !function (NioApp, $) {
-  "use strict"; //////// for developer - barchart //////// 
-  // Avilable options to pass from outside 
+  "use strict"; //////// for developer - barchart ////////
+  // Avilable options to pass from outside
   // labels: array,
   // stacked: false - boolean,
   // legend: false - boolean,
-  // dataUnit: string, (Used in tooltip or other section for display) 
+  // dataUnit: string, (Used in tooltip or other section for display)
   // datasets: [{label : string, color: string (color code with # or other format), data: array}]
 
   var barChartData = {
@@ -23,16 +23,93 @@
     }]
   };
   var barChartMultiple = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    dataUnit: 'USD',
-    datasets: [{
-      label: "Income",
-      color: "#b695ff",
-      data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95]
-    }, {
-      label: "Expense",
-      color: "#f4aaa4",
-      data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125]
+    labels: ["Fila 1", "Fila 2", "Fila 3", "Fila 4", "Fila 5", "Fila 6", "Fila 7", "Fila 8", "Fila 9", "Fila 10", "Fila 11", "Fila 12", "Fila 13", "Fila 14", "Fila 15", "Fila 16", "Fila 17"],
+    dataUnit: 'Unidades',
+    datasets: [
+    {
+        label: "Jabon QRTG",
+        color: "#b695ff",
+        data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Papel Bond",
+        color: "#f4aaa4",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Vinagre",
+        color: "#FF5733",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Carbon",
+        color: "#333FFF",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Aceite",
+        color: "#FF33D7",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+    }]
+  };
+  var barChartMultiple2 = {
+    labels: ["Fila 1", "Fila 2", "Fila 3", "Fila 4", "Fila 5", "Fila 6", "Fila 7", "Fila 8", "Fila 9", "Fila 10", "Fila 11", "Fila 12", "Fila 13", "Fila 14", "Fila 15", "Fila 16", "Fila 17"],
+    dataUnit: 'Unidades',
+    datasets: [
+    {
+        label: "Champú Roxi",
+        color: "#b695ff",
+        data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Lapices",
+        color: "#f4aaa4",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Alcohol",
+        color: "#FF5733",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Algodon",
+        color: "#333FFF",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Inyectadora",
+        color: "#FF33D7",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+    }]
+  };
+  var barChartMultiple3 = {
+    labels: ["Fila 1", "Fila 2", "Fila 3", "Fila 4", "Fila 5", "Fila 6", "Fila 7", "Fila 8", "Fila 9", "Fila 10", "Fila 11", "Fila 12", "Fila 13", "Fila 14", "Fila 15", "Fila 16", "Fila 17"],
+    dataUnit: 'Unidades',
+    datasets: [
+    {
+        label: "Borradores",
+        color: "#b695ff",
+        data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Sacapuntas",
+        color: "#f4aaa4",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Cuadernos",
+        color: "#FF5733",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Marcadores",
+        color: "#333FFF",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+    },
+    {
+        label: "Tizas",
+        color: "#FF33D7",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
     }]
   };
   var barChartStacked = {
@@ -154,11 +231,11 @@
   } // init bar chart
 
 
-  barChart(); //////// for developer - linechart //////// 
-  // Avilable options to pass from outside 
+  barChart(); //////// for developer - linechart ////////
+  // Avilable options to pass from outside
   // labels: array,
   // legend: false - boolean,
-  // dataUnit: string, (Used in tooltip or other section for display) 
+  // dataUnit: string, (Used in tooltip or other section for display)
   // datasets: [{label : string, color: string (color code with # or other format), data: array}]
 
   var solidLineChart = {
@@ -310,21 +387,31 @@
   } // init line chart
 
 
-  lineChart(); //////// for developer - pieChart //////// 
-  // Avilable options to pass from outside 
+  lineChart(); //////// for developer - pieChart ////////
+  // Avilable options to pass from outside
   // labels: array,
   // legend: false - boolean,
-  // dataUnit: string, (Used in tooltip or other section for display) 
+  // dataUnit: string, (Used in tooltip or other section for display)
   // datasets: [{label : string, color: string (color code with # or other format), data: array}]
 
   var pieChartData = {
-    labels: ["Send", "Receive", "Withdraw"],
-    dataUnit: 'BTC',
+    labels: ["Disponible (1800 m2)", "Utilizado (300 m2)"],
+    dataUnit: '%',
     legend: false,
     datasets: [{
       borderColor: "#fff",
-      background: ["#b695ff", "#f4aaa4", "#8feac5"],
-      data: [110, 80, 125]
+      background: ["#f4aaa4", "#8feac5"],
+      data: [83.4, 16.6 ]
+    }]
+  };
+  var pieChartDataBahia = {
+    labels: ["Bahía A (300 m2 - Utilizado)", "Bahía B (500 m2 - Utilizado)", "Bahía C (1000 m2 - Utilizado)"],
+    dataUnit: '%',
+    legend: false,
+    datasets: [{
+      borderColor: "#fff",
+      background: ["#f4aaa4", "#8feac5", "#b695ff"],
+      data: [16.6, 27.7, 55.5 ]
     }]
   };
 

@@ -26,6 +26,12 @@
                             <span class="nk-menu-text">Inicio</span>
                         </a>
                     </li><!-- .nk-menu-item -->
+                    <li class="nk-menu-item">
+                        <a href="{{ url('/graficos') }}" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
+                            <span class="nk-menu-text">Graficos</span>
+                        </a>
+                    </li><!-- .nk-menu-item -->
                     @if (Auth::user()->rol->name == 'Administrador')
                     <li class="nk-menu-item">
                         <a href="{{ url('/documentos') }}" class="nk-menu-link">

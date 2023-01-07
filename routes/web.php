@@ -26,6 +26,10 @@ Route::get('/storage-link', function () {
     return Artisan::call('storage:link');
 });
 
+Route::get('/graficos', function () {
+    return view('graficos.index');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -62,6 +66,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/usuarios/{id}/editar-usuario', [UsersController::class, 'edit'])->name('usuarios.edit');
     Route::put('/usuarios/{id}/actualizar-usuario', [UsersController::class, 'update'])->name('usuarios.update');
     Route::post('/usuarios/{id}/eliminar-usuario', [UsersController::class, 'destroy'])->name('documentos.destroy');
+
+
 });
 
 require __DIR__.'/auth.php';
