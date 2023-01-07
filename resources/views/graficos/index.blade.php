@@ -9,7 +9,7 @@
                     <div class="nk-block-head nk-block-head-sm">
                         <div class="nk-block-between">
                             <div class="nk-block-head-content">
-                                <h3 class="nk-block-title page-title">Usuarios</h3>
+                                <h3 class="nk-block-title page-title">Almacén CEBÚ</h3>
                             </div><!-- .nk-block-head-content -->
                             <div class="toggle-wrap nk-block-tools-toggle">
                                 <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1"
@@ -17,10 +17,10 @@
                                 <div class="toggle-expand-content" data-content="pageMenu">
                                     <ul class="nk-block-tools g-3">
                                         <li class="nk-block-tools-opt">
-                                            <a href="{{ url('/usuarios/nuevo-usuario') }}" class="btn btn-primary">
+                                            {{-- <a href="{{ url('/usuarios/nuevo-usuario') }}" class="btn btn-primary">
                                                 <em class="icon ni ni-plus"></em>
                                                 <span>Nuevo Usuario</span>
-                                            </a>
+                                            </a> --}}
                                         </li>
                                     </ul>
                                 </div>
@@ -35,7 +35,7 @@
                                     <div class="card card-preview">
                                         <div class="card-inner">
                                             <div class="card-head text-center">
-                                                <h6 class="title">Almacen de 2500 m2 - Capacidad fisica 1800 m2</h6>
+                                                <h6 class="title">Almacén de 2500 m2 - Capacidad física 1800 m2</h6>
                                             </div>
                                             <div class="nk-ck-sm">
                                                 <canvas class="pie-chart" id="pieChartData"></canvas>
@@ -47,7 +47,7 @@
                                     <div class="card card-preview">
                                         <div class="card-inner">
                                             <div class="card-head text-center">
-                                                <h6 class="title">Almacen - Bahías</h6>
+                                                <h6 class="title">Almacén - Bahías</h6>
                                             </div>
                                             <div class="nk-ck-sm">
                                                 <canvas class="pie-chart" id="pieChartDataBahia"></canvas>

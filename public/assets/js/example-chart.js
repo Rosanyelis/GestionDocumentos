@@ -27,27 +27,27 @@
     dataUnit: 'Unidades',
     datasets: [
     {
-        label: "Jabon QRTG",
+        label: "Súpersacos (Graftech)",
         color: "#b695ff",
         data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 12, 20, 50, 30, 14]
     },
     {
-        label: "Papel Bond",
+        label: "Basa impregnación (Graftech)",
         color: "#f4aaa4",
         data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
     },
     {
-        label: "Vinagre",
+        label: "Binder Deza (Graftech)",
         color: "#FF5733",
         data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
     },
     {
-        label: "Carbon",
+        label: "Binder Ruetgers (Graftech)",
         color: "#333FFF",
         data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
     },
     {
-        label: "Aceite",
+        label: "Binder Epsilon (Graftech)",
         color: "#FF33D7",
         data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
     }]
@@ -57,28 +57,23 @@
     dataUnit: 'Unidades',
     datasets: [
     {
-        label: "Champú Roxi",
+        label: "Súpersacos (LDL)",
         color: "#b695ff",
         data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 12, 20, 50, 30, 14]
     },
     {
-        label: "Lapices",
+        label: "Cleartuf Max (LDL)",
         color: "#f4aaa4",
         data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
     },
     {
-        label: "Alcohol",
+        label: "Cleartuf Turbo (LDL)",
         color: "#FF5733",
         data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
     },
     {
-        label: "Algodon",
+        label: "Cleartuf 8006 (LDL)",
         color: "#333FFF",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
-    },
-    {
-        label: "Inyectadora",
-        color: "#FF33D7",
         data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
     }]
   };
