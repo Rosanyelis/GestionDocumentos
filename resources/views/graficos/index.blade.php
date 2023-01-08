@@ -31,11 +31,14 @@
                     <div class="card card-preview">
                         <div class="card-inner">
                             <div class="row g-gs">
+                                <div class="col-md-12 text-center">
+                                    <img src="{{ asset('images/imagen_almacén.jpg') }}" width="50%" alt="">
+                                </div>
                                 <div class="col-md-6">
                                     <div class="card card-preview">
                                         <div class="card-inner">
                                             <div class="card-head text-center">
-                                                <h6 class="title">Almacén de 2500 m2 - Capacidad física 1800 m2</h6>
+                                                <h6 class="title">Almacén de 10.500  m2 - Capacidad Física 10.000 m2</h6>
                                             </div>
                                             <div class="nk-ck-sm">
                                                 <canvas class="pie-chart" id="pieChartData"></canvas>

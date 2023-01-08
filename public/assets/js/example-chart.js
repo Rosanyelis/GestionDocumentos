@@ -23,33 +23,33 @@
     }]
   };
   var barChartMultiple = {
-    labels: ["Fila 1", "Fila 2", "Fila 3", "Fila 4", "Fila 5", "Fila 6", "Fila 7", "Fila 8", "Fila 9", "Fila 10", "Fila 11", "Fila 12", "Fila 13", "Fila 14", "Fila 15", "Fila 16", "Fila 17"],
+    labels: ["Fila 1", "Fila 2", "Fila 3", "Fila 4", "Fila 5", "Fila 6", "Fila 7", "Fila 8", "Fila 9", "Fila 10", "Fila 11", "Fila 12", "Fila 13", "Fila 14", "Fila 15", "Fila 16", "Fila 17",  "Fila 18"],
     dataUnit: 'Unidades',
     datasets: [
     {
         label: "Súpersacos (Graftech)",
-        color: "#b695ff",
-        data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 12, 20, 50, 30, 14]
+        color: "#532713",
+        data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 12, 20, 50, 30, 14, 11]
     },
     {
         label: "Basa impregnación (Graftech)",
-        color: "#f4aaa4",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+        color: "#d34c25",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14, 13]
     },
     {
         label: "Binder Deza (Graftech)",
-        color: "#FF5733",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+        color: "#882e1c",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14, 20]
     },
     {
         label: "Binder Ruetgers (Graftech)",
-        color: "#333FFF",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+        color: "#be6d58",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14, 60]
     },
     {
         label: "Binder Epsilon (Graftech)",
-        color: "#FF33D7",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+        color: "#c39186",
+        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14, 50]
     }]
   };
   var barChartMultiple2 = {
@@ -58,53 +58,53 @@
     datasets: [
     {
         label: "Súpersacos (LDL)",
-        color: "#b695ff",
+        color: "#532713",
         data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 12, 20, 50, 30, 14]
     },
     {
         label: "Cleartuf Max (LDL)",
-        color: "#f4aaa4",
+        color: "#d34c25",
         data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
     },
     {
         label: "Cleartuf Turbo (LDL)",
-        color: "#FF5733",
+        color: "#c39186",
         data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
     },
     {
         label: "Cleartuf 8006 (LDL)",
-        color: "#333FFF",
+        color: "#be6d58",
         data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
     }]
   };
   var barChartMultiple3 = {
-    labels: ["Fila 1", "Fila 2", "Fila 3", "Fila 4", "Fila 5", "Fila 6", "Fila 7", "Fila 8", "Fila 9", "Fila 10", "Fila 11", "Fila 12", "Fila 13", "Fila 14", "Fila 15", "Fila 16", "Fila 17"],
+    labels: ["Fila 1", "Fila 2", "Fila 3", "Fila 4", "Fila 5", "Fila 6", "Fila 7", "Fila 8"],
     dataUnit: 'Unidades',
     datasets: [
     {
         label: "Borradores",
-        color: "#b695ff",
-        data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 12, 20, 50, 30, 14]
+        color: "#c39186",
+        data: [110, 80, 125, 55, 95, 75, 90, 110]
     },
     {
         label: "Sacapuntas",
-        color: "#f4aaa4",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+        color: "#532713",
+        data: [75, 90, 110, 80, 125, 55, 95, 75]
     },
     {
         label: "Cuadernos",
-        color: "#FF5733",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+        color: "#a1a4a5",
+        data: [75, 90, 110, 80, 125, 55, 95, 75]
     },
     {
         label: "Marcadores",
-        color: "#333FFF",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+        color: "#882e1c",
+        data: [75, 90, 110, 80, 125, 55, 95, 75]
     },
     {
         label: "Tizas",
-        color: "#FF33D7",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+        color: "#5e5d5d",
+        data: [75, 90, 110, 80, 125, 55, 95, 75]
     }]
   };
   var barChartStacked = {
@@ -390,23 +390,23 @@
   // datasets: [{label : string, color: string (color code with # or other format), data: array}]
 
   var pieChartData = {
-    labels: ["Disponible (1800 m2)", "Utilizado (300 m2)"],
+    labels: ["Área disponible (8.132 m2)", "Área de Oficina (500 m2)", "Área Pasillos (1.868 m2)", "Área Utilizada (0 m2)"],
     dataUnit: '%',
     legend: false,
     datasets: [{
       borderColor: "#fff",
-      background: ["#f4aaa4", "#8feac5"],
-      data: [83.4, 16.6 ]
+      background: ["#d34c25", "#863e2f", "#be6d58", '#882e1c'],
+      data: [77.44, 4.76, 17.79, 0.1 ]
     }]
   };
   var pieChartDataBahia = {
-    labels: ["Bahía A (300 m2 - Utilizado)", "Bahía B (500 m2 - Utilizado)", "Bahía C (1000 m2 - Utilizado)"],
+    labels: ["Zona A (4.000 m2)", "Zona B (4.000 m2)", "Zona C (2.000 m2)"],
     dataUnit: '%',
     legend: false,
     datasets: [{
       borderColor: "#fff",
-      background: ["#f4aaa4", "#8feac5", "#b695ff"],
-      data: [16.6, 27.7, 55.5 ]
+      background: ["#863e2f", "#be6d58", "#d34c25"],
+      data: [40, 40, 20 ]
     }]
   };
 
