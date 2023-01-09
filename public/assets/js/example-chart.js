@@ -27,29 +27,34 @@
     dataUnit: 'Unidades',
     datasets: [
     {
-        label: "Súpersacos (Graftech)",
+        label: "GRAFTECH",
         color: "#532713",
-        data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 12, 20, 50, 30, 14, 11]
+        data: [50, 80, 100, 55, 95, 75, 0, 0, 0, 60, 55, 95, 12, 20, 45, 0, 0, 0]
     },
     {
-        label: "Basa impregnación (Graftech)",
+        label: "LDL",
         color: "#d34c25",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14, 13]
+        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 55, 45, 23]
     },
     {
-        label: "Binder Deza (Graftech)",
+        label: "GEON",
         color: "#882e1c",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14, 20]
+        data: [0, 0, 0, 0, 0, 0, 75, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
-        label: "Binder Ruetgers (Graftech)",
+        label: "ELECTRICO",
         color: "#be6d58",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14, 60]
+        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
-        label: "Binder Epsilon (Graftech)",
+        label: "ALTA CARGO",
         color: "#c39186",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14, 50]
+        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+        label: "PROCIMAR",
+        color: "#2c2c2b",
+        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     }]
   };
   var barChartMultiple2 = {
@@ -57,54 +62,69 @@
     dataUnit: 'Unidades',
     datasets: [
     {
-        label: "Súpersacos (LDL)",
+        label: "GRAFTECH",
         color: "#532713",
-        data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 12, 20, 50, 30, 14]
+        data: [110, 80, 125, 55, 95, 75, 0, 0, 0, 55, 45, 95, 25, 30, 50, 0, 0]
     },
     {
-        label: "Cleartuf Max (LDL)",
+        label: "LDL",
         color: "#d34c25",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 64]
     },
     {
-        label: "Cleartuf Turbo (LDL)",
+        label: "GEON",
         color: "#c39186",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
-        label: "Cleartuf 8006 (LDL)",
+        label: "ELECTRICO",
         color: "#be6d58",
-        data: [75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 12, 20, 50, 30, 14]
+        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+        label: "ALTA CARGO",
+        color: "#c39186",
+        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+        label: "PROCIMAR",
+        color: "#2c2c2b",
+        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     }]
   };
   var barChartMultiple3 = {
     labels: ["Fila 1", "Fila 2", "Fila 3", "Fila 4", "Fila 5", "Fila 6", "Fila 7", "Fila 8"],
     dataUnit: 'Unidades',
     datasets: [
-    {
-        label: "Borradores",
-        color: "#c39186",
-        data: [110, 80, 125, 55, 95, 75, 90, 110]
-    },
-    {
-        label: "Sacapuntas",
+      {
+        label: "GRAFTECH",
         color: "#532713",
-        data: [75, 90, 110, 80, 125, 55, 95, 75]
+        data: [0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
-        label: "Cuadernos",
-        color: "#a1a4a5",
-        data: [75, 90, 110, 80, 125, 55, 95, 75]
+        label: "LDL",
+        color: "#d34c25",
+        data: [60, 75, 0, 0, 45, 0, 35, 0]
     },
     {
-        label: "Marcadores",
-        color: "#882e1c",
-        data: [75, 90, 110, 80, 125, 55, 95, 75]
+        label: "GEON",
+        color: "#c39186",
+        data: [0, 0, 0, 0, 0, 55, 0, 0]
     },
     {
-        label: "Tizas",
-        color: "#5e5d5d",
-        data: [75, 90, 110, 80, 125, 55, 95, 75]
+        label: "ELECTRICO",
+        color: "#be6d58",
+        data: [0, 0, 0, 0, 0, 0, 0, 74]
+    },
+    {
+        label: "ALTA CARGO",
+        color: "#c39186",
+        data: [0, 0, 0, 50, 0, 0, 0, 0]
+    },
+    {
+        label: "PROCIMAR",
+        color: "#2c2c2b",
+        data: [0, 0, 45, 0, 0, 0, 0, 0]
     }]
   };
   var barChartStacked = {
