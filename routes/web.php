@@ -26,9 +26,6 @@ Route::get('/storage-link', function () {
     return Artisan::call('storage:link');
 });
 
-Route::get('/graficos', function () {
-    return view('graficos.index');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

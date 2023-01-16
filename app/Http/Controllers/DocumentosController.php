@@ -116,11 +116,18 @@ class DocumentosController extends Controller
             return redirect('documentos/'.$id.'/firmar-documento')->with('danger', 'Por favor indique la posición de la firma.');
         }
 
-        // decodificamos la imagen
+        // dd($request);
+        // decodificamos la imagen de Nombre Completo
         $Base64Img = $request->firmaimg;
 		list(, $Base64Img) = explode(';', $Base64Img);
 		list(, $Base64Img) = explode(',', $Base64Img);
 		$Base64Img = base64_decode($Base64Img);
+
+        // decodificamos la imagen de las iniciales
+        $Base64ImgIniciales = $request->firmainicialesimg;
+		list(, $Base64ImgIniciales) = explode(';', $Base64ImgIniciales);
+		list(, $Base64ImgIniciales) = explode(',', $Base64ImgIniciales);
+		$Base64ImgIniciales = base64_decode($Base64ImgIniciales);
 
         // renombramos la imagen
         $uuid = Str::uuid(4);
@@ -130,11 +137,19 @@ class DocumentosController extends Controller
             mkdir(public_path('/storage/Firmas'), 0777);
         }
 
+        // renombramos la imagen
+        $uuid = Str::uuid(4);
+        $fileNameIniciales = $uuid . '- firma Iniciales- ' . Auth::user()->name . '-' .date("Ymdhms") .'.png';
+
         $urlArchivo = $uploadPath.$fileName;
-        // la guardamos
+        $urlArchivoIniciales = $uploadPath.$fileNameIniciales;
+        // la guardamos el nombre
         file_put_contents($urlArchivo, $Base64Img);
+        // la guardamos las iniciales
+        file_put_contents($urlArchivoIniciales, $Base64ImgIniciales);
 
         $image_information = getimagesize($urlArchivo);
+        $image_information2 = getimagesize($urlArchivoIniciales);
         // Ahora firmamos el pdf
         $urlFile = public_path().$request->urlArchivo;
 
@@ -168,8 +183,8 @@ class DocumentosController extends Controller
 			// validamos que la variable del for $n
 			// sea igual a la ultima pagina del documento pdf
             // $pdf->SetXY(50,$h-100);
+            $pdf->Image($urlArchivoIniciales, 5, 5, $image_information2[0]/4);
 		    if($n == $pagecount){
-
 		    	// $pdf->SetXY(5,$h-250-($image_information[1]));//esquina inferior izquierda
 		    	$pdf->Image($urlArchivo, $x, $y, $image_information[0]/4);
 		    }

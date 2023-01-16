@@ -65,7 +65,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-label" for="posicion">Indique la posición de la firma en el
-                                                documento</label>
+                                                documento *</label>
                                             <div class="form-control-wrap ">
                                                 <div class="form-control-select">
                                                     <select class="form-control" name="posicion" id="posicion">
@@ -96,6 +96,16 @@
                                                 los firmantes restantes.</strong></p>
                                     </div>
                                     <div class="col-md-12">
+                                        <label class="form-label" for="posicion">Indique las Iniciales de la firma</label>
+                                        <textarea id="firmadociniciales" class="summernote-basic" name="firmaIniciales"></textarea>
+                                        @if ($errors->has('firma'))
+                                            <span id="fv-full-name-error" class="invalid text-danger">
+                                                {{ $errors->first('firma') }}
+                                            </span>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="form-label" for="posicion">Indique la firma</label>
                                         <textarea id="firmadoc" class="summernote-basic" name="firma"></textarea>
                                         @if ($errors->has('firma'))
                                             <span id="fv-full-name-error" class="invalid text-danger">
@@ -104,10 +114,13 @@
                                         @endif
                                     </div>
                                     <input type="hidden" id="capturaFirma" name="firmaimg" value="">
+                                    <input type="hidden" id="capturaFirmaInicial" name="firmainicialesimg" value="">
                                     <div class="col-md-12 ">
                                         <div class="form-group float-right">
-                                            <button id="btnEnviar" type="button"
-                                                class="btn btn-lg btn-primary">Guardar</button>
+                                            <button id="btnProcesar" type="button"
+                                                class="btn btn-lg btn-success">Procesar Firma</button>
+                                            <button id="btnEnviar" type="submit"
+                                                class="btn btn-lg btn-primary" disabled>Guardar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -127,20 +140,55 @@
         (function(NioApp, $) {
             'use strict';
 
-            $('#btnEnviar').click(function() {
+            $('#btnProcesar').click(function() {
+                var firma1 = $("#firmadoc").val();
+                var firma2 = $("#firmadociniciales").val();
+
                 const containerFirma = document.createElement("div");
                 containerFirma.setAttribute('id', 'contenfirma');
                 containerFirma.setAttribute('class', 'col-md-1 p-0 text-center firma');
-                containerFirma.insertAdjacentHTML('beforeend', $("#firmadoc").val(), );
+                containerFirma.insertAdjacentHTML('beforeend',  firma1);
+
+                const containerFirmaIniciales = document.createElement("div");
+                containerFirmaIniciales.setAttribute('id', 'contenfirmaIniciales');
+                containerFirmaIniciales.setAttribute('class', 'col-md-1 p-0 text-center firma');
+                containerFirmaIniciales.insertAdjacentHTML('beforeend', firma2);
 
                 document.body.appendChild(containerFirma);
-                html2canvas(containerFirma).then((canvas) => {
-                    const base64image = canvas.toDataURL("image/png");
-                    // console.log(base64image);
+                document.body.appendChild(containerFirmaIniciales);
+                html2canvas(containerFirma, containerFirmaIniciales).then((firma1) => {
+                    const base64image = firma1.toDataURL("image/png");
+                    console.log(base64image);
                     $('#capturaFirma').val(base64image);
-
-                    $('#formFirma').submit();
                 });
+
+                html2canvas(containerFirmaIniciales).then((firma2) => {
+                    const base64imageInicial = firma2.toDataURL("image/png");
+                    console.log(base64imageInicial);
+                    $('#capturaFirmaInicial').val(base64imageInicial);
+                });
+
+                var timerInterval;
+                Swal.fire({
+                    title: 'Espere unos Segundos mientras se procesan las firmas!',
+                    html: 'Este mensaje se cerrara pronto.',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    onBeforeOpen: function onBeforeOpen() {
+                        Swal.showLoading();
+                        timerInterval = setInterval(function () {
+                        Swal.getContent().querySelector('b').textContent = Swal.getTimerLeft();
+                        }, 100);
+                    },
+                    onClose: function onClose() {
+                        clearInterval(timerInterval);
+                    }
+                }).then(function (result) {
+                    $('#btnEnviar').removeAttr('disabled');
+                });
+
+                // $('#formFirma').submit();
+
             });
         })(NioApp, jQuery);
     </script>
