@@ -149,7 +149,14 @@ class DocumentosController extends Controller
         file_put_contents($urlArchivoIniciales, $Base64ImgIniciales);
 
         $image_information = getimagesize($urlArchivo);
-        $image_information2 = getimagesize($urlArchivoIniciales);
+        $imageRotar = imagecreatefrompng($urlArchivoIniciales);
+        $gradosIzq = 90;
+        $gradosDer = 270;
+        $rotar1 = imagerotate($imageRotar, $gradosIzq, 0);
+        $fileNameInicialesIzq = $uuid . '- firma Iniciales Rotada Izq - ' . Auth::user()->name . '-' .date("Ymdhms") .'.png';
+        $imgRotadaInicialesIzq = $uploadPath.$fileNameInicialesIzq;
+        $imgRotada1 = imagepng($rotar1, $imgRotadaInicialesIzq);
+        $imageInfo2 = getimagesize($imgRotadaInicialesIzq);
         // Ahora firmamos el pdf
         $urlFile = public_path().$request->urlArchivo;
 
@@ -182,10 +189,11 @@ class DocumentosController extends Controller
 		    $pdf->useTemplate($tplId);
 			// validamos que la variable del for $n
 			// sea igual a la ultima pagina del documento pdf
-            // $pdf->SetXY(50,$h-100);
-            $pdf->Image($urlArchivoIniciales, 5, 5, $image_information2[0]/4);
+            if($n != $pagecount){
+                $pdf->Image($imgRotadaInicialesIzq, 5, 125, $imageInfo2[0]/4);
+                $pdf->Image($imgRotadaInicialesIzq, 195, 125, $imageInfo2[0]/4);
+            }
 		    if($n == $pagecount){
-		    	// $pdf->SetXY(5,$h-250-($image_information[1]));//esquina inferior izquierda
 		    	$pdf->Image($urlArchivo, $x, $y, $image_information[0]/4);
 		    }
 		}

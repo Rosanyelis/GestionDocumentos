@@ -149,6 +149,7 @@
                 containerFirma.setAttribute('class', 'col-md-1 p-0 text-center firma');
                 containerFirma.insertAdjacentHTML('beforeend',  firma1);
 
+
                 const containerFirmaIniciales = document.createElement("div");
                 containerFirmaIniciales.setAttribute('id', 'contenfirmaIniciales');
                 containerFirmaIniciales.setAttribute('class', 'col-md-1 p-0 text-center firma');
