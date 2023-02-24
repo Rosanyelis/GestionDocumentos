@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use setasign\Fpdi\Fpdi;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class FirmaController extends Controller
 {
@@ -54,13 +56,31 @@ class FirmaController extends Controller
 
         $archivo = $request->nameArchivo;
         // Envío de correo
-        $mailable = new SendNotifyAsignado($archivo);
+        require base_path("vendor/autoload.php");
+        $mail = new PHPMailer(true); // Passing `true` enables exceptions
         try {
-            // $user = User::where('rol_id', 1)->first();
+            // Email server settings
+            $mail->SMTPDebug = 0;
+            $mail->isSMTP();
+            $mail->Host = 'smtp-mail.outlook.com';//  smtp host
+            $mail->SMTPAuth = true;
+            $mail->Username = 'soporteweb@alpasa.com.mx';//  sender username
+            $mail->Password = 'Tat16037';// sender password
+            $mail->SMTPSecure = 'tls';// encryption - ssl/tls
+            $mail->Port = 587;
+            $mail->isHTML(true);
+            $mail->CharSet = 'UTF-8';
 
-            Mail::to('rosanyelismendoza@gmail.com')->send($mailable);
-        } catch (\Throwable $th) {
-            return redirect('mis-documentos')->with('error', 'Problemas con el servicio de Correos, por favor intente nuevamente en firmar el documento');
+            $mail->setFrom('soporteweb@alpasa.com.mx', 'ALPASA');
+            $mail->Subject = 'Firma de Documentos ALPASA - Documento Firmado';
+            $mail->addAddress('soporteweb@alpasa.com.mx');
+            $mail->Body = '<!DOCTYPE html><html style="font-family: sans-serif; line-height: 1.15; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin: 0; font-family: "DM Sans", sans-serif, "Helvetica Neue", Arial, "Noto Sans", sans-serif; font-size: 0.875rem; font-weight: 400; line-height: 1.65; color: #526484; text-align: left; background-color: #f5f6fa;"> <table style="background: #f5f6fa; font-size: 14px; line-height: 22px; font-weight: 400; color: #8094ae; width: 100%;"> <tbody> <tr> <td style="padding-top: 2.75rem !important;"> <table style="width: 100%; max-width: 620px; margin: 0 auto;"> <tbody> <tr> <td style="text-align: center; padding-bottom:10px;"> <p style="font-size: 13px; color: #854fff; padding-top: 12px;"></p></td></tr></tbody> </table> <table style="width: 96%; max-width: 620px; margin: 0 auto; background: #ffffff;"> <tbody> <tr> <td style="padding-left: 1rem !important;padding-left: 2.75rem !important;padding-right: 1rem !important;padding-right: 2.75rem !important;padding-bottom: 1rem !important;padding-bottom: 2.75rem !important;"> <p style="text-align: justify; ">Buen día estimado(a).</p><p>Se notifica que el documento <strong>'.$archivo.'</strong> fué firmado por uno de los usuarios asignados.</p></td></tr></tbody> </table> <table style="width: 100%; max-width: 620px; margin: 0 auto;"> <tbody> <tr> <td style="text-align: center; padding-top: 1.5rem !important;"> <p style="font-size: 13px;">Copyright © 2023 Firma de Documentos ALPASA. Todos los Derechos Reservados.</p></td></tr></tbody> </table> </td></tr></tbody> </table></body></html>';
+            if(!$mail->send()) {
+                return redirect('mis-documentos')->with('error', 'Problemas con el servicio de Correos, por favor intente nuevamente.'.$e.'');
+            }
+        } catch (Exception $e) {
+
+            return redirect('mis-documentos')->with('error', 'Problemas con el servicio de Correos, por favor intente nuevamente.'.$e.'');
         }
 
         // decodificamos la imagen
